@@ -1,0 +1,102 @@
+/* Reset general */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Hero section */
+.hero {
+  background: url('images/hero.jpg') center/cover no-repeat;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+  text-align: center;
+}
+
+/* Botones principales */
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+.btn-success:hover {
+  background-color: #1e7e34;
+}
+
+/* Producto cards */
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+.product-card img {
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* Footer */
+footer {
+  background-color: #343a40;
+  color: white;
+  padding: 15px 0;
+}
+
+/* Modal animado */
+#splashModal .modal-content {
+  background-color: #343a40;
+  color: white;
+  border: none;
+  border-radius: 15px;
+}
+#splashModal .modal-content h1 {
+  font-size: 24px;
+}
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: scale(0.7);}
+  10% { opacity: 1; transform: scale(1);}
+  70% { opacity: 1;}
+  100% { opacity: 0; transform: scale(0.7);}
+}
+
+/* Formularios */
+form label {
+  font-weight: 500;
+}
+form input, form textarea {
+  border-radius: 5px;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
