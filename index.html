@@ -2,37 +2,20 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Escuela de Instrumentos Musicales</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academia Musical</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    #splashModal .modal-content {
-      animation: fadeInOut 3s forwards;
-    }
-    @keyframes fadeInOut {
-      0% { opacity: 0; transform: scale(0.7);}
-      10% { opacity: 1; transform: scale(1);}
-      70% { opacity: 1;}
-      100% { opacity: 0; transform: scale(0.7);}
-    }
-    .hero {
-      background: url('images/hero.jpg') center/cover no-repeat;
-      height: 60vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Modal de bienvenida -->
-  <div class="modal fade show" id="splashModal" tabindex="-1" aria-hidden="true" style="display: block; background: rgba(0,0,0,0.8);">
+  <div class="modal fade" id="splashModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content text-center p-4">
-        <h1 class="mb-3">Bienvenido a la Escuela de Instrumentos Musicales</h1>
-        <p>¡Descubre el músico que llevas dentro!</p>
+      <div class="modal-content text-center">
+        <div class="modal-body">
+          <h1>🎵 Bienvenido a Academia Musical 🎵</h1>
+          <p>¡Descubre el maravilloso mundo de la música!</p>
+        </div>
       </div>
     </div>
   </div>
@@ -40,43 +23,52 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="#">Escuela Musical</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <a class="navbar-brand" href="#">Academia Musical</a>
+      <div class="collapse navbar-collapse">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda en línea</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
           <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <section class="hero">
-    <div class="text-center">
-      <h1 class="display-4">Aprende a tocar tu instrumento favorito</h1>
-      <p class="lead">Guitarra, Piano, Violín y mucho más</p>
-      <a href="https://docs.google.com/spreadsheets/d/DOFA_LINK_AQUI" target="_blank" class="btn btn-primary">Ver matriz DOFA</a>
+    <div class="container">
+      <h1>Aprende a tocar instrumentos musicales con nosotros</h1>
+      <p>Ofrecemos clases personalizadas para guitarra, piano y violín</p>
+      <a href="dofa.html" class="btn btn-primary mt-3">Ver análisis DOFA</a>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
-    &copy; 2025 Escuela Musical. Todos los derechos reservados.
-    <br>Integrantes: Juan Pérez, María López, Pedro Gómez.
+  <!-- Quiénes somos -->
+  <section class="container py-5">
+    <h2>¿Quiénes somos?</h2>
+    <p>Somos un grupo apasionado por la música conformado por:</p>
+    <ul>
+      <li>Juan Pérez</li>
+      <li>María Gómez</li>
+      <li>Carlos López</li>
+    </ul>
+  </section>
+
+  <footer class="text-center">
+    <p>&copy; 2025 Academia Musical - Todos los derechos reservados</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    // Mostrar modal de bienvenida por 3 segundos
+    window.addEventListener('load', () => {
+      const splash = new bootstrap.Modal(document.getElementById('splashModal'), {
+        backdrop: 'static',
+        keyboard: false
+      });
+      splash.show();
       setTimeout(() => {
-        const splashModal = document.getElementById('splashModal');
-        splashModal.classList.remove('show');
-        splashModal.style.display = 'none';
-        document.body.classList.remove('modal-open');
+        splash.hide();
       }, 3000);
     });
   </script>
